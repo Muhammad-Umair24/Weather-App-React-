@@ -22,18 +22,40 @@ const Weather: FC<WeatherProps>=({data})=>{
                 
                 <div className="level-item has-text-centered">
                     <div>
-                        <p className="heading">temp</p>
+                        <p className="heading is-success">temp</p>
                         <div className="title">
-                            <p className="mb-2">{data.main.temp}K</p>
-                            <p className="mb-2">{fahrenheit}<sup>&#8457;</sup></p>
+                            {/* <p className="mb-2">{data.main.temp}K</p>
+                            <p className="mb-2">{fahrenheit}<sup>&#8457;</sup></p> */}
                             <p>{celsius}<sup>&#8451;</sup></p>    
                         </div>
+                        <br/>
+                        <p className="heading">Feels like</p>
+                        <div className="title">
+                            <p className="mb-2">{(data.main.feels_like - 273.15).toFixed(2)}<sup>&#8451;</sup></p>
+                        </div>
+                        {/* <p className="heading">Max</p>
+                        <div className="title">
+                            <p className="mb-2">{(data.main.temp_max - 273.15).toFixed(2)}<sup>&#8451;</sup></p>
+                        </div>
+                        <p className="heading">Min</p>
+                        <div className="title">
+                            <p className="mb-2">{(data.main.temp_min - 273.15).toFixed(2)}<sup>&#8451;</sup></p>
+                        </div> */}
                     </div>
                 </div>
                 <div className="level-item has-text-centered">
                     <div>
                         <p className="heading">humidity</p>
                         <p className="title">{data.main.humidity}</p>
+                    </div>
+                </div>
+                <div className="level-item has-text-centered">
+                    <div>
+                        <p className="heading">Cloudiness</p>
+                        <p className="title">{data.clouds.all}%</p>
+                        <br/>
+                        <p className="heading">visibility</p>
+                        <p className="title">{data.visibility}m</p>
                     </div>
                 </div>
                 <div className="level-item has-text-centered">

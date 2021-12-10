@@ -45,6 +45,7 @@ export interface WeatherData{
         speed:number;
         deg:number;
     };
+    precipitation:string;
 }
 
 export interface WeatherError{
